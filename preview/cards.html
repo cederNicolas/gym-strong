@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; padding: 24px 28px; background: #0A0A0A; font-family: 'Montserrat', sans-serif; color: #fff; display: flex; gap: 16px; }
+  .card {
+    flex: 1; background: #1A1A1A; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; gap: 12px;
+    border: 1px solid #2A2A2A; transition: all 0.25s cubic-bezier(0.16,1,0.3,1);
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(255,184,0,0.15); }
+  .card.featured {
+    border-color: #FFB800; background: linear-gradient(180deg, rgba(255,184,0,0.08) 0%, #1A1A1A 100%);
+  }
+  .card-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #888; }
+  .card-title { font-size: 20px; font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; }
+  .card-body { font-size: 13px; font-weight: 400; color: #aaa; line-height: 1.5; }
+  .card-price { font-size: 28px; font-weight: 900; color: #FFB800; }
+  .card-price span { font-size: 14px; font-weight: 600; color: #888; }
+  .card-btn {
+    background: #FFB800; color: #0A0A0A; border: none; border-radius: 9999px; padding: 10px 24px;
+    font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 12px; text-transform: uppercase;
+    letter-spacing: 0.05em; cursor: pointer; margin-top: auto; align-self: flex-start;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <span class="card-label">Actividad</span>
+    <div class="card-title">MUSCULACIÓN</div>
+    <div class="card-body">Entrenamiento con pesas libres y máquinas. Profes siempre presentes.</div>
+  </div>
+  <div class="card featured">
+    <span class="card-label" style="color:#FFB800;">Plan Destacado</span>
+    <div class="card-title">MEMBRESÍA LIBRE</div>
+    <div class="card-price">$40.000 <span>/mes</span></div>
+    <div class="card-body">Acceso completo a todas las actividades.</div>
+    <button class="card-btn">SUMATE</button>
+  </div>
+  <div class="card">
+    <span class="card-label">Actividad</span>
+    <div class="card-title">SPINNING</div>
+    <div class="card-body">Clases grupales de alta intensidad con música motivadora.</div>
+  </div>
+</body>
+</html>

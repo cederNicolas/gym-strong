@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; padding: 24px 28px; background: #0A0A0A; font-family: 'Montserrat', sans-serif; color: #fff; display: flex; flex-direction: column; gap: 20px; }
+  .stitle { font-size: 10px; font-weight: 700; color: #FFB800; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: -8px; }
+  .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+
+  .badge {
+    display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 9999px;
+    font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  .badge-accent { background: rgba(255,184,0,0.15); color: #FFB800; }
+  .badge-white { background: rgba(255,255,255,0.08); color: #fff; }
+  .badge-solid { background: #FFB800; color: #0A0A0A; }
+
+  .tag {
+    display: inline-block; padding: 4px 10px; border-radius: 6px;
+    font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;
+    background: #1A1A1A; color: #888; border: 1px solid #2A2A2A;
+  }
+  .tag-active { background: rgba(255,184,0,0.1); color: #FFB800; border-color: rgba(255,184,0,0.3); }
+
+  .label-bar {
+    display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.08em; color: #888;
+  }
+  .label-bar .dot { width: 8px; height: 8px; border-radius: 50%; }
+
+  .nav-pills { display: flex; gap: 4px; background: #1A1A1A; border-radius: 9999px; padding: 4px; }
+  .nav-pill {
+    padding: 8px 18px; border-radius: 9999px; font-size: 12px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.05em; color: #888; cursor: pointer; border: none; background: transparent;
+    font-family: 'Montserrat', sans-serif; transition: all 0.2s;
+  }
+  .nav-pill.active { background: #FFB800; color: #0A0A0A; }
+</style>
+</head>
+<body>
+  <div class="stitle">Badges</div>
+  <div class="row">
+    <span class="badge badge-accent">Musculación</span>
+    <span class="badge badge-accent">Spinning</span>
+    <span class="badge badge-white">Nuevo</span>
+    <span class="badge badge-solid">Popular</span>
+  </div>
+  <div class="stitle">Tags</div>
+  <div class="row">
+    <span class="tag tag-active">Lun</span>
+    <span class="tag tag-active">Mar</span>
+    <span class="tag tag-active">Mié</span>
+    <span class="tag tag-active">Jue</span>
+    <span class="tag tag-active">Vie</span>
+    <span class="tag">Sáb</span>
+    <span class="tag">Dom</span>
+  </div>
+  <div class="stitle">Status Labels</div>
+  <div class="row">
+    <div class="label-bar"><span class="dot" style="background:#22c55e;"></span> Abierto ahora</div>
+    <div class="label-bar"><span class="dot" style="background:#ef4444;"></span> Cerrado</div>
+    <div class="label-bar"><span class="dot" style="background:#FFB800;"></span> Casi lleno</div>
+  </div>
+  <div class="stitle">Pill Navigation</div>
+  <div class="row">
+    <div class="nav-pills">
+      <button class="nav-pill active">Inicio</button>
+      <button class="nav-pill">Actividades</button>
+      <button class="nav-pill">Planes</button>
+      <button class="nav-pill">Contacto</button>
+    </div>
+  </div>
+</body>
+</html>

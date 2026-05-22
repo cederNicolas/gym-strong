@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; padding: 24px; background: #0A0A0A; font-family: 'Montserrat', sans-serif; }
+  .row { display: flex; gap: 16px; align-items: stretch; }
+  .swatch {
+    flex: 1; border-radius: 10px; padding: 16px; display: flex; flex-direction: column; justify-content: flex-end; min-height: 100px;
+  }
+  .name { font-size: 13px; font-weight: 700; margin-bottom: 2px; }
+  .hex { font-size: 11px; font-weight: 600; opacity: 0.7; }
+  .primary { background: #FFB800; }
+  .primary .name, .primary .hex { color: #0A0A0A; }
+  .primary-light { background: #FFCA3A; }
+  .primary-light .name, .primary-light .hex { color: #0A0A0A; }
+  .primary-dark { background: #E5A500; }
+  .primary-dark .name, .primary-dark .hex { color: #0A0A0A; }
+  .primary-10 { background: rgba(255,184,0,0.10); border: 1px solid rgba(255,184,0,0.2); }
+  .primary-10 .name, .primary-10 .hex { color: #FFB800; }
+  .primary-20 { background: rgba(255,184,0,0.20); border: 1px solid rgba(255,184,0,0.3); }
+  .primary-20 .name, .primary-20 .hex { color: #FFB800; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="swatch primary">
+      <div class="name">Primary</div>
+      <div class="hex">#FFB800</div>
+    </div>
+    <div class="swatch primary-light">
+      <div class="name">Primary Light</div>
+      <div class="hex">#FFCA3A</div>
+    </div>
+    <div class="swatch primary-dark">
+      <div class="name">Primary Dark</div>
+      <div class="hex">#E5A500</div>
+    </div>
+    <div class="swatch primary-10">
+      <div class="name">Primary 10%</div>
+      <div class="hex">rgba(255,184,0,0.1)</div>
+    </div>
+    <div class="swatch primary-20">
+      <div class="name">Primary 20%</div>
+      <div class="hex">rgba(255,184,0,0.2)</div>
+    </div>
+  </div>
+</body>
+</html>

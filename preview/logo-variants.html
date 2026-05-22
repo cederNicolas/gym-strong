@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; padding: 28px 24px; background: #0A0A0A; font-family: 'Montserrat', sans-serif; color: #fff; display: flex; gap: 20px; align-items: stretch; justify-content: center; }
+  .variant {
+    flex: 1; display: flex; flex-direction: column; align-items: center; gap: 10px; max-width: 220px;
+  }
+  .logo-box {
+    display: flex; align-items: center; justify-content: center; border-radius: 12px; padding: 20px 24px;
+    width: 100%; min-height: 110px;
+  }
+  .logo-box img { max-height: 72px; width: auto; max-width: 100%; object-fit: contain; }
+  .dark-bg { background: #0A0A0A; border: 1px solid #2A2A2A; }
+  .light-bg { background: #FFFFFF; }
+  .accent-bg { background: #FFB800; }
+  .caption { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #888; text-align: center; }
+</style>
+</head>
+<body>
+  <div class="variant">
+    <div class="logo-box light-bg">
+      <img src="../assets/logo-full-color.png" alt="Full color on light">
+    </div>
+    <span class="caption">Light BG · Full color</span>
+  </div>
+  <div class="variant">
+    <div class="logo-box dark-bg">
+      <img src="../assets/logo-on-dark.png" alt="Yellow + white on dark">
+    </div>
+    <span class="caption">Dark BG · Yellow + white</span>
+  </div>
+  <div class="variant">
+    <div class="logo-box accent-bg">
+      <img src="../assets/logo-full-color.png" alt="Full color on accent">
+    </div>
+    <span class="caption">Accent BG · Full color</span>
+  </div>
+</body>
+</html>

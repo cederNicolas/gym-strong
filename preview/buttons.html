@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; padding: 24px 28px; background: #0A0A0A; font-family: 'Montserrat', sans-serif; color: #fff; display: flex; flex-direction: column; gap: 16px; }
+  .row { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+  .stitle { font-size: 10px; font-weight: 700; color: #FFB800; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: -4px; }
+  button {
+    font-family: 'Montserrat', sans-serif; cursor: pointer; border: none; outline: none;
+    font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; transition: all 0.25s cubic-bezier(0.16,1,0.3,1);
+  }
+  .btn-primary {
+    background: #FFB800; color: #0A0A0A; padding: 14px 32px; border-radius: 9999px; font-size: 14px;
+  }
+  .btn-primary:hover { background: #FFCA3A; transform: scale(1.02); }
+  .btn-primary:active { background: #E5A500; transform: scale(0.98); }
+  .btn-secondary {
+    background: transparent; color: #FFB800; padding: 12px 28px; border-radius: 9999px; font-size: 14px;
+    border: 2px solid #FFB800;
+  }
+  .btn-secondary:hover { background: rgba(255,184,0,0.1); }
+  .btn-ghost {
+    background: transparent; color: #fff; padding: 12px 28px; border-radius: 9999px; font-size: 14px;
+    border: 2px solid #3A3A3A;
+  }
+  .btn-ghost:hover { border-color: #888; color: #FFB800; }
+  .btn-sm {
+    padding: 8px 20px; font-size: 12px;
+  }
+  .btn-icon {
+    background: #1A1A1A; color: #fff; width: 44px; height: 44px; border-radius: 50%; font-size: 18px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .btn-icon:hover { background: #2A2A2A; color: #FFB800; }
+</style>
+</head>
+<body>
+  <div class="stitle">Primary</div>
+  <div class="row">
+    <button class="btn-primary">EMPEZÁ HOY</button>
+    <button class="btn-primary btn-sm">SUMATE</button>
+  </div>
+  <div class="stitle">Secondary / Outline</div>
+  <div class="row">
+    <button class="btn-secondary">VER PLANES</button>
+    <button class="btn-secondary btn-sm">HORARIOS</button>
+  </div>
+  <div class="stitle">Ghost / Icon</div>
+  <div class="row">
+    <button class="btn-ghost">CONTACTO</button>
+    <button class="btn-ghost btn-sm">VER MÁS</button>
+    <button class="btn-icon">↑</button>
+    <button class="btn-icon">☰</button>
+  </div>
+</body>
+</html>

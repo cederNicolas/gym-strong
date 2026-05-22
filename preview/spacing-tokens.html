@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; padding: 24px 28px; background: #0A0A0A; font-family: 'Montserrat', sans-serif; color: #fff; }
+  .tokens { display: flex; flex-direction: column; gap: 8px; }
+  .row { display: flex; align-items: center; gap: 12px; }
+  .bar { background: #FFB800; border-radius: 4px; height: 18px; }
+  .val { font-size: 10px; font-weight: 700; color: #888; min-width: 46px; text-align: right; font-variant-numeric: tabular-nums; }
+  .name { font-size: 10px; font-weight: 600; color: #555; min-width: 50px; }
+  .divider { border: none; border-top: 1px solid #1A1A1A; margin: 4px 0; }
+</style>
+</head>
+<body>
+  <div class="tokens">
+    <div class="row"><span class="val">4px</span><span class="name">space-1</span><div class="bar" style="width:16px;"></div></div>
+    <div class="row"><span class="val">8px</span><span class="name">space-2</span><div class="bar" style="width:32px;"></div></div>
+    <div class="row"><span class="val">12px</span><span class="name">space-3</span><div class="bar" style="width:48px;"></div></div>
+    <div class="row"><span class="val">16px</span><span class="name">space-4</span><div class="bar" style="width:64px;"></div></div>
+    <div class="row"><span class="val">24px</span><span class="name">space-6</span><div class="bar" style="width:96px;"></div></div>
+    <div class="row"><span class="val">32px</span><span class="name">space-8</span><div class="bar" style="width:128px;"></div></div>
+    <div class="row"><span class="val">48px</span><span class="name">space-12</span><div class="bar" style="width:192px;"></div></div>
+    <div class="row"><span class="val">64px</span><span class="name">space-16</span><div class="bar" style="width:256px;"></div></div>
+    <div class="row"><span class="val">96px</span><span class="name">space-24</span><div class="bar" style="width:384px;"></div></div>
+  </div>
+</body>
+</html>

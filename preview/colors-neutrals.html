@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; padding: 24px; background: #0A0A0A; font-family: 'Montserrat', sans-serif; }
+  .row { display: flex; gap: 12px; align-items: stretch; }
+  .swatch {
+    flex: 1; border-radius: 10px; padding: 14px 12px; display: flex; flex-direction: column; justify-content: flex-end; min-height: 90px;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .name { font-size: 11px; font-weight: 700; margin-bottom: 2px; }
+  .hex { font-size: 10px; font-weight: 600; opacity: 0.6; }
+  .s950 { background: #0F0F0F; } .s950 .name, .s950 .hex { color: #888; }
+  .s900 { background: #1A1A1A; } .s900 .name, .s900 .hex { color: #888; }
+  .s800 { background: #2A2A2A; } .s800 .name, .s800 .hex { color: #aaa; }
+  .s700 { background: #3A3A3A; } .s700 .name, .s700 .hex { color: #ccc; }
+  .s600 { background: #555555; } .s600 .name, .s600 .hex { color: #e0e0e0; }
+  .s500 { background: #888888; } .s500 .name, .s500 .hex { color: #fff; }
+  .s400 { background: #AAAAAA; } .s400 .name, .s400 .hex { color: #0A0A0A; }
+  .s300 { background: #CCCCCC; } .s300 .name, .s300 .hex { color: #0A0A0A; }
+  .s200 { background: #E0E0E0; } .s200 .name, .s200 .hex { color: #0A0A0A; }
+  .s100 { background: #F0F0F0; } .s100 .name, .s100 .hex { color: #0A0A0A; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="swatch s950"><div class="name">950</div><div class="hex">#0F0F0F</div></div>
+    <div class="swatch s900"><div class="name">900</div><div class="hex">#1A1A1A</div></div>
+    <div class="swatch s800"><div class="name">800</div><div class="hex">#2A2A2A</div></div>
+    <div class="swatch s700"><div class="name">700</div><div class="hex">#3A3A3A</div></div>
+    <div class="swatch s600"><div class="name">600</div><div class="hex">#555555</div></div>
+    <div class="swatch s500"><div class="name">500</div><div class="hex">#888888</div></div>
+    <div class="swatch s400"><div class="name">400</div><div class="hex">#AAAAAA</div></div>
+    <div class="swatch s300"><div class="name">300</div><div class="hex">#CCCCCC</div></div>
+    <div class="swatch s200"><div class="name">200</div><div class="hex">#E0E0E0</div></div>
+    <div class="swatch s100"><div class="name">100</div><div class="hex">#F0F0F0</div></div>
+  </div>
+</body>
+</html>
