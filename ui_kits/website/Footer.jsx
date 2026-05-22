@@ -11,7 +11,7 @@ const footStyles = {
   },
   brand: { display: 'flex', flexDirection: 'column', gap: 16 },
   logoImg: {
-    height: 56, width: 'auto', objectFit: 'contain',
+    height: 56, width: 'auto', objectFit: 'contain', alignSelf: 'flex-start',
   },
   brandDesc: {
     fontSize: 14, fontWeight: 400, color: '#888', lineHeight: 1.6,
