@@ -74,14 +74,14 @@ function Pricing() {
           <div style={priceStyles.glow}></div>
           <span style={priceStyles.badge}>Único plan</span>
           <h3 style={priceStyles.planName}>Membresía Libre</h3>
-          <p style={priceStyles.planDesc}>Acceso completo a todas las actividades y horarios</p>
+          <p style={priceStyles.planDesc}>Acceso completo a musculación en todos los horarios</p>
           <div style={priceStyles.price}>$40.000</div>
           <div style={priceStyles.period}>por mes</div>
           <ul style={priceStyles.features}>
             <li style={priceStyles.feature}><span style={priceStyles.check}>✓</span> Musculación ilimitada</li>
-            <li style={priceStyles.feature}><span style={priceStyles.check}>✓</span> Spinning incluido</li>
             <li style={priceStyles.feature}><span style={priceStyles.check}>✓</span> Seguimiento de profes</li>
-            <li style={priceStyles.feature}><span style={priceStyles.check}>✓</span> Acceso Lun a Vie 07:30–22:00</li>
+            <li style={priceStyles.feature}><span style={priceStyles.check}>✓</span> Lun a Vie 07:30–22:00</li>
+            <li style={priceStyles.feature}><span style={priceStyles.check}>✓</span> Sáb 09:00–13:30</li>
           </ul>
           <a style={priceStyles.cta}
              href="https://wa.me/5491149601563?text=Hola!%20Vi%20la%20web%20de%20Strong%20Gym%20y%20quiero%20informaci%C3%B3n%20sobre%20la%20membres%C3%ADa%20libre%20%F0%9F%92%AA"

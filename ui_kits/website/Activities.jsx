@@ -33,7 +33,11 @@ const actStyles = {
     position: 'absolute', inset: 0,
     background: 'linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.45) 100%)',
   },
-  cardBody: { padding: '24px 28px' },
+  cardBody: { padding: '24px 28px', display: 'flex', flexDirection: 'column', gap: 8 },
+  cardLink: {
+    marginTop: 8, fontSize: 12, fontWeight: 700, textTransform: 'uppercase',
+    letterSpacing: '0.1em', color: '#FFB800', textDecoration: 'none',
+  },
   cardTag: {
     fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em',
     color: '#FFB800', background: 'rgba(255,184,0,0.1)', display: 'inline-block',
@@ -55,12 +59,14 @@ function Activities() {
       tag: 'Fuerza',
       title: 'Musculación',
       desc: 'Entrenamiento con pesas libres y máquinas. Rutinas personalizadas con profes que te acompañan en cada serie.',
+      wa: 'https://wa.me/5491149601563?text=Hola!%20Vi%20la%20web%20de%20Strong%20Gym%20y%20quiero%20informaci%C3%B3n%20sobre%20Musculaci%C3%B3n%20%F0%9F%92%AA',
     },
     {
       img: '../../uploads/spinning.jpg',
       tag: 'Cardio',
       title: 'Spinning',
       desc: 'Clases grupales de alta intensidad sobre bici. Música, energía y un equipo que te empuja a dar todo.',
+      wa: 'https://wa.me/5491149601563?text=Hola!%20Vi%20la%20web%20de%20Strong%20Gym%20y%20quiero%20informaci%C3%B3n%20sobre%20Spinning%20%F0%9F%9A%B4',
     },
   ];
 
@@ -71,9 +77,10 @@ function Activities() {
         <h2 style={actStyles.title}>NUESTRAS ACTIVIDADES</h2>
         <div style={actStyles.grid}>
           {activities.map((a, i) => (
-            <div key={i} style={actStyles.card}
-                 onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.borderColor = '#FFB800'; e.currentTarget.style.boxShadow = '0 8px 32px rgba(255,184,0,0.15)'; e.currentTarget.querySelector('img').style.transform = 'scale(1.06)'; }}
-                 onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#2A2A2A'; e.currentTarget.style.boxShadow = 'none'; e.currentTarget.querySelector('img').style.transform = 'scale(1)'; }}>
+            <a key={i} href={a.wa} target="_blank" rel="noopener"
+               style={{...actStyles.card, textDecoration: 'none', cursor: 'pointer', display: 'block'}}
+               onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.borderColor = '#FFB800'; e.currentTarget.style.boxShadow = '0 8px 32px rgba(255,184,0,0.15)'; e.currentTarget.querySelector('img').style.transform = 'scale(1.06)'; }}
+               onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#2A2A2A'; e.currentTarget.style.boxShadow = 'none'; e.currentTarget.querySelector('img').style.transform = 'scale(1)'; }}>
               <div style={actStyles.cardImage}>
                 <img src={a.img} alt={a.title} style={actStyles.cardImg} />
                 <div style={actStyles.cardOverlay} />
@@ -82,8 +89,9 @@ function Activities() {
                 <span style={actStyles.cardTag}>{a.tag}</span>
                 <h3 style={actStyles.cardTitle}>{a.title}</h3>
                 <p style={actStyles.cardDesc}>{a.desc}</p>
+                <span style={actStyles.cardLink}>Consultar por WhatsApp →</span>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
