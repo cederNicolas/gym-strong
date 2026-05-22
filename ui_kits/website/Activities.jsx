@@ -55,14 +55,14 @@ const actStyles = {
 function Activities() {
   const activities = [
     {
-      img: '../../uploads/musculacion.jpg',
+      img: '/uploads/musculacion.jpg',
       tag: 'Fuerza',
       title: 'Musculación',
       desc: 'Entrenamiento con pesas libres y máquinas. Rutinas personalizadas con profes que te acompañan en cada serie.',
       wa: 'https://wa.me/5491149601563?text=Hola!%20Vi%20la%20web%20de%20Strong%20Gym%20y%20quiero%20informaci%C3%B3n%20sobre%20Musculaci%C3%B3n%20%F0%9F%92%AA',
     },
     {
-      img: '../../uploads/spinning.jpg',
+      img: '/uploads/spinning.jpg',
       tag: 'Cardio',
       title: 'Spinning',
       desc: 'Clases grupales de alta intensidad sobre bici. Música, energía y un equipo que te empuja a dar todo.',

@@ -68,7 +68,7 @@ function Navbar() {
     <nav style={{ ...navStyles.nav, background: navBg, boxShadow: navShadow, backdropFilter: navBackdrop }}>
       <div style={navStyles.inner}>
         <a href="#hero" style={navStyles.logo} onClick={(e) => { e.preventDefault(); scrollTo('hero'); }}>
-          <img src="../../assets/logo-on-dark.png" alt="Strong Gym" style={navStyles.logoImg} />
+          <img src="/assets/logo-on-dark.png" alt="Strong Gym" style={navStyles.logoImg} />
         </a>
 
         <ul style={navStyles.links} className="nav-links-desktop">

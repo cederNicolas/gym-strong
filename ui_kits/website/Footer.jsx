@@ -52,7 +52,7 @@ function Footer() {
       <div style={footStyles.inner}>
         <div style={footStyles.top} className="footer-grid">
           <div style={footStyles.brand}>
-            <img src="../../assets/logo-on-dark.png" alt="Strong Gym" style={footStyles.logoImg} />
+            <img src="/assets/logo-on-dark.png" alt="Strong Gym" style={footStyles.logoImg} />
             <p style={footStyles.brandDesc}>
               Crezcamos juntos. Tu gym de barrio en Rafael Calzada con profes, comunidad y las ganas de siempre.
             </p>
