@@ -82,7 +82,7 @@ function Activities() {
                onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.borderColor = '#FFB800'; e.currentTarget.style.boxShadow = '0 8px 32px rgba(255,184,0,0.15)'; e.currentTarget.querySelector('img').style.transform = 'scale(1.06)'; }}
                onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#2A2A2A'; e.currentTarget.style.boxShadow = 'none'; e.currentTarget.querySelector('img').style.transform = 'scale(1)'; }}>
               <div style={actStyles.cardImage}>
-                <img src={a.img} alt={a.title} style={actStyles.cardImg} />
+                <img src={a.img} alt={a.title} style={actStyles.cardImg} loading="lazy" />
                 <div style={actStyles.cardOverlay} />
               </div>
               <div style={actStyles.cardBody}>
