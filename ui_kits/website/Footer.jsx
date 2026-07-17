@@ -60,7 +60,7 @@ function Footer() {
           <div>
             <div style={footStyles.colTitle}>Navegación</div>
             <ul style={footStyles.links}>
-              {['Inicio', 'Actividades', 'Planes', 'Horarios', 'Ubicación'].map(l => (
+              {['Inicio', 'Actividades', 'Planes', 'Horarios', 'Clases', 'Ubicación'].map(l => (
                 <li key={l}>
                   <a style={footStyles.link}
                      onMouseEnter={e => e.target.style.color = '#FFB800'}

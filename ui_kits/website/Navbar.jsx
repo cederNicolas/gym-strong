@@ -61,6 +61,7 @@ function Navbar() {
     { label: 'Actividades', id: 'activities' },
     { label: 'Planes', id: 'pricing' },
     { label: 'Horarios', id: 'schedule' },
+    { label: 'Clases', id: 'class-schedule' },
     { label: 'Ubicación', id: 'location' },
   ];
 
