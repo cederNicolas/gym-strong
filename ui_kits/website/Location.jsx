@@ -85,7 +85,7 @@ function Location() {
               <div style={locStyles.iconBox}><LocIcon type="pin" /></div>
               <div style={locStyles.infoText}>
                 <span style={locStyles.infoLabel}>Dirección</span>
-                <p style={locStyles.infoVal}>Av. San Martín 2573, Rafael Calzada</p>
+                <p style={locStyles.infoVal}>Presidente Arturo Illia 3042, Rafael Calzada</p>
               </div>
             </div>
             <div style={locStyles.infoItem}>
@@ -118,7 +118,7 @@ function Location() {
           </div>
           <div style={locStyles.mapWrap}>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3276.3408798443475!2d-58.37017822350686!3d-34.797364872885574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a32d1941622beb%3A0x4d995c6376801730!2sGYM%20strong!5e0!3m2!1ses!2sar!4v1779226128602!5m2!1ses!2sar"
+              src="https://www.google.com/maps?q=Presidente+Arturo+Illia+3042%2C+Rafael+Calzada%2C+Buenos+Aires%2C+Argentina&output=embed"
               width="100%" height="100%" style={{ border: 0, filter: 'invert(0.9) hue-rotate(180deg) saturate(0.3)' }}
               allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade">
             </iframe>

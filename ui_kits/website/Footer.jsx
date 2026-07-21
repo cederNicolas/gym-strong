@@ -74,7 +74,7 @@ function Footer() {
           <div>
             <div style={footStyles.colTitle}>Contacto</div>
             <ul style={footStyles.links}>
-              <li><span style={{ ...footStyles.link, cursor: 'default' }}>Av. San Martín 2573</span></li>
+              <li><span style={{ ...footStyles.link, cursor: 'default' }}>Presidente Arturo Illia 3042</span></li>
               <li><span style={{ ...footStyles.link, cursor: 'default' }}>Rafael Calzada</span></li>
               <li><span style={{ ...footStyles.link, cursor: 'default' }}>Lun–Vie 07:30–22:00</span></li>
               <li>

@@ -2,7 +2,7 @@
 
 ## Overview
 
-**Strong Gym** is a neighborhood fitness center located at Av. San Martín 2573, Rafael Calzada, Buenos Aires, Argentina. The brand identity is bold, motivational, and community-driven — built around the tagline **"Crezcamos juntos"** (Let's grow together).
+**Strong Gym** is a neighborhood fitness center located at Presidente Arturo Illia 3042, Rafael Calzada, Buenos Aires, Argentina. The brand identity is bold, motivational, and community-driven — built around the tagline **"Crezcamos juntos"** (Let's grow together).
 
 The gym offers Musculación (weight training) and Spinning, with a single membership plan: **Membresía Libre** at $40.000/mes. The brand emphasizes real community, always-present trainers, and wide operating hours (Mon–Fri 07:30–22:00).
 
