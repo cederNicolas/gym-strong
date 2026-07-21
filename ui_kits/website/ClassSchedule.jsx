@@ -32,6 +32,16 @@ const classSchedStyles = {
     fontSize: 20, fontWeight: 900, textTransform: 'uppercase', color: '#fff',
     letterSpacing: '-0.01em', margin: '0 0 18px',
   },
+  group: {
+    display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 20,
+  },
+  groupLastChild: {
+    marginBottom: 0,
+  },
+  groupLabel: {
+    fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em',
+    color: '#888', margin: '0 0 2px',
+  },
   slots: {
     display: 'flex', flexDirection: 'column', gap: 8,
   },
@@ -90,9 +100,19 @@ function ClassSchedule() {
     },
     {
       name: 'Telas',
-      slots: [
-        { days: 'Martes y Jueves', time: '10 a 12hs' },
-        { days: 'Miércoles y Viernes', time: '17:30 a 19hs' },
+      groups: [
+        {
+          label: 'Adultos',
+          slots: [
+            { days: 'Martes y Jueves', time: '10 a 12hs' },
+          ],
+        },
+        {
+          label: 'Teens',
+          slots: [
+            { days: 'Miércoles y Viernes', time: '17:30 a 19hs' },
+          ],
+        },
       ],
     },
   ];
@@ -117,17 +137,37 @@ function ClassSchedule() {
           {activities.map((a, i) => (
             <div key={i} style={classSchedStyles.card}>
               <h3 style={classSchedStyles.cardTitle}>{a.name}</h3>
-              <div style={classSchedStyles.slots}>
-                {a.slots.map((s, j) => (
-                  <a key={j} href={waLink(a.name, s)} target="_blank" rel="noopener"
-                     style={classSchedStyles.slot}
-                     onMouseEnter={e => { e.currentTarget.style.borderColor = '#FFB800'; e.currentTarget.style.background = 'rgba(255,184,0,0.08)'; }}
-                     onMouseLeave={e => { e.currentTarget.style.borderColor = '#2A2A2A'; e.currentTarget.style.background = '#0A0A0A'; }}>
-                    <span style={classSchedStyles.slotDays}>{s.days}</span>
-                    <span style={classSchedStyles.slotTime}>{s.time}</span>
-                  </a>
-                ))}
-              </div>
+              {a.groups ? (
+                a.groups.map((g, gi) => (
+                  <div key={gi} style={{
+                    ...classSchedStyles.group,
+                    ...(gi === a.groups.length - 1 ? classSchedStyles.groupLastChild : {}),
+                  }}>
+                    <p style={classSchedStyles.groupLabel}>{g.label}</p>
+                    {g.slots.map((s, j) => (
+                      <a key={j} href={waLink(`${a.name} ${g.label}`, s)} target="_blank" rel="noopener"
+                         style={classSchedStyles.slot}
+                         onMouseEnter={e => { e.currentTarget.style.borderColor = '#FFB800'; e.currentTarget.style.background = 'rgba(255,184,0,0.08)'; }}
+                         onMouseLeave={e => { e.currentTarget.style.borderColor = '#2A2A2A'; e.currentTarget.style.background = '#0A0A0A'; }}>
+                        <span style={classSchedStyles.slotDays}>{s.days}</span>
+                        <span style={classSchedStyles.slotTime}>{s.time}</span>
+                      </a>
+                    ))}
+                  </div>
+                ))
+              ) : (
+                <div style={classSchedStyles.slots}>
+                  {a.slots.map((s, j) => (
+                    <a key={j} href={waLink(a.name, s)} target="_blank" rel="noopener"
+                       style={classSchedStyles.slot}
+                       onMouseEnter={e => { e.currentTarget.style.borderColor = '#FFB800'; e.currentTarget.style.background = 'rgba(255,184,0,0.08)'; }}
+                       onMouseLeave={e => { e.currentTarget.style.borderColor = '#2A2A2A'; e.currentTarget.style.background = '#0A0A0A'; }}>
+                      <span style={classSchedStyles.slotDays}>{s.days}</span>
+                      <span style={classSchedStyles.slotTime}>{s.time}</span>
+                    </a>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </div>
