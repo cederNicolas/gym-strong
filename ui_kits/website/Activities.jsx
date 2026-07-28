@@ -50,11 +50,62 @@ const actStyles = {
   cardDesc: {
     fontSize: 14, fontWeight: 400, color: '#888', lineHeight: 1.6, margin: 0,
   },
+  mosaic: {
+    display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '1fr 1fr',
+    gap: 1, background: '#2A2A2A', width: '100%', height: '100%',
+  },
+  mosaicTile: {
+    display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+    gap: 8,
+  },
+  mosaicIcon: {
+    width: 28, height: 28, color: '#FFB800',
+  },
+  mosaicLabel: {
+    fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em',
+    color: '#fff',
+  },
 };
+
+function MosaicIcon({ type }) {
+  const s = { width: 28, height: 28, color: '#FFB800' };
+  if (type === 'fightdo') {
+    return (
+      <svg style={s} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
+      </svg>
+    );
+  }
+  if (type === 'zumba') {
+    return (
+      <svg style={s} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M9 18V5l12-2v13" />
+        <circle cx="6" cy="18" r="3" />
+        <circle cx="18" cy="16" r="3" />
+      </svg>
+    );
+  }
+  if (type === 'spinning') {
+    return (
+      <svg style={s} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="18.5" cy="17.5" r="3.5" />
+        <circle cx="5.5" cy="17.5" r="3.5" />
+        <circle cx="15" cy="5" r="1" />
+        <path d="M12 17.5V14l-3-3 4-3 2 3h2" />
+      </svg>
+    );
+  }
+  return (
+    <svg style={s} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2" />
+    </svg>
+  );
+}
 
 function Activities() {
   const activities = [
     {
+      type: 'photo',
       img: '/uploads/musculacion.jpg',
       tag: 'Fuerza',
       title: 'Musculación',
@@ -62,11 +113,17 @@ function Activities() {
       wa: 'https://wa.me/5491149601563?text=Hola!%20Vi%20la%20web%20de%20Strong%20Gym%20y%20quiero%20informaci%C3%B3n%20sobre%20Musculaci%C3%B3n%20%F0%9F%92%AA',
     },
     {
-      img: '/uploads/spinning.jpg',
-      tag: 'Cardio',
-      title: 'Spinning',
-      desc: 'Clases grupales de alta intensidad sobre bici. Música, energía y un equipo que te empuja a dar todo.',
-      wa: 'https://wa.me/5491149601563?text=Hola!%20Vi%20la%20web%20de%20Strong%20Gym%20y%20quiero%20informaci%C3%B3n%20sobre%20Spinning%20%F0%9F%9A%B4',
+      type: 'mosaic',
+      tag: 'Grupales',
+      title: 'Fight.Do · Zumba · Spinning · Telas',
+      desc: 'Clases grupales para todos los niveles. Mirá los días y horarios de cada una y reservá tu clase de prueba.',
+      href: '#class-schedule',
+      tiles: [
+        { icon: 'fightdo', label: 'Fight.Do', bg: '#151515' },
+        { icon: 'zumba', label: 'Zumba', bg: '#1f1f1f' },
+        { icon: 'spinning', label: 'Spinning', bg: '#1f1f1f' },
+        { icon: 'telas', label: 'Telas', bg: '#151515' },
+      ],
     },
   ];
 
@@ -77,19 +134,48 @@ function Activities() {
         <h2 style={actStyles.title}>NUESTRAS ACTIVIDADES</h2>
         <div style={actStyles.grid}>
           {activities.map((a, i) => (
-            <a key={i} href={a.wa} target="_blank" rel="noopener"
+            <a key={i} href={a.type === 'photo' ? a.wa : a.href}
+               target={a.type === 'photo' ? '_blank' : undefined}
+               rel={a.type === 'photo' ? 'noopener' : undefined}
                style={{...actStyles.card, textDecoration: 'none', cursor: 'pointer', display: 'block'}}
-               onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.borderColor = '#FFB800'; e.currentTarget.style.boxShadow = '0 8px 32px rgba(255,184,0,0.15)'; e.currentTarget.querySelector('img').style.transform = 'scale(1.06)'; }}
-               onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#2A2A2A'; e.currentTarget.style.boxShadow = 'none'; e.currentTarget.querySelector('img').style.transform = 'scale(1)'; }}>
+               onMouseEnter={e => {
+                 e.currentTarget.style.transform = 'translateY(-4px)';
+                 e.currentTarget.style.borderColor = '#FFB800';
+                 e.currentTarget.style.boxShadow = '0 8px 32px rgba(255,184,0,0.15)';
+                 const img = e.currentTarget.querySelector('img');
+                 if (img) img.style.transform = 'scale(1.06)';
+               }}
+               onMouseLeave={e => {
+                 e.currentTarget.style.transform = 'translateY(0)';
+                 e.currentTarget.style.borderColor = '#2A2A2A';
+                 e.currentTarget.style.boxShadow = 'none';
+                 const img = e.currentTarget.querySelector('img');
+                 if (img) img.style.transform = 'scale(1)';
+               }}>
               <div style={actStyles.cardImage}>
-                <img src={a.img} alt={a.title} style={actStyles.cardImg} loading="lazy" />
-                <div style={actStyles.cardOverlay} />
+                {a.type === 'photo' ? (
+                  <React.Fragment>
+                    <img src={a.img} alt={a.title} style={actStyles.cardImg} loading="lazy" />
+                    <div style={actStyles.cardOverlay} />
+                  </React.Fragment>
+                ) : (
+                  <div style={actStyles.mosaic}>
+                    {a.tiles.map((t, ti) => (
+                      <div key={ti} style={{...actStyles.mosaicTile, background: t.bg}}>
+                        <MosaicIcon type={t.icon} />
+                        <span style={actStyles.mosaicLabel}>{t.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
               <div style={actStyles.cardBody}>
                 <span style={actStyles.cardTag}>{a.tag}</span>
                 <h3 style={actStyles.cardTitle}>{a.title}</h3>
                 <p style={actStyles.cardDesc}>{a.desc}</p>
-                <span style={actStyles.cardLink}>Consultar por WhatsApp →</span>
+                <span style={actStyles.cardLink}>
+                  {a.type === 'photo' ? 'Consultar por WhatsApp →' : 'Ver horarios y reservar →'}
+                </span>
               </div>
             </a>
           ))}
