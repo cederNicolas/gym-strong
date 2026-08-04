@@ -4,7 +4,7 @@
 
 **Strong Gym** is a neighborhood fitness center located at Presidente Arturo Illia 3042, Rafael Calzada, Buenos Aires, Argentina. The brand identity is bold, motivational, and community-driven — built around the tagline **"Crezcamos juntos"** (Let's grow together).
 
-The gym offers Musculación (weight training) and Spinning, with a single membership plan: **Membresía Libre** at $40.000/mes. The brand emphasizes real community, always-present trainers, and wide operating hours (Mon–Fri 07:30–22:00).
+The gym offers Musculación (weight training) plus group classes (Zumba, Fight.Do, Spinning, Telas), with four membership tiers: **Musculación 2x** ($40.000/mes), **Musculación 3x** ($43.000/mes), **Musculación Libre** ($45.000/mes, most popular), and **Musculación + Cardio** ($50.000/mes, adds one cardio class of choice). The brand emphasizes real community, always-present trainers, and wide operating hours (Mon–Fri 07:30–22:00).
 
 ### Sources
 

@@ -15,7 +15,7 @@ Full-page interactive website prototype for Strong Gym, a neighborhood fitness c
 3. **Activities** — Musculación and Spinning cards
 4. **Why Choose Us** — 3 value props (trainers, hours, community)
 5. **Schedule** — Operating hours display
-6. **Pricing** — Single featured plan: Membresía Libre $40.000/mes
+6. **Pricing** — 4 plans: Musculación 2x/3x/Libre + Musculación + Cardio
 7. **Testimonials** — Motivational fitness quotes
 8. **Location** — Address + embedded Google Map
 9. **Footer** — Logo, social links, contact info

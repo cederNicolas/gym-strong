@@ -92,10 +92,24 @@ function ClassSchedule() {
     {
       name: 'Spinning',
       slots: [
+        { days: 'Lunes, Miércoles y Viernes', time: '9hs' },
         { days: 'Lunes', time: '20:15 a 21:15hs' },
         { days: 'Martes y Jueves', time: '19hs' },
         { days: 'Viernes', time: '20 a 21hs' },
         { days: 'Sábados', time: '13:30hs' },
+      ],
+    },
+    {
+      name: 'GAP',
+      slots: [
+        { days: 'Lunes, Miércoles y Viernes', time: '10hs' },
+        { days: 'Lunes, Miércoles y Viernes', time: '14hs' },
+      ],
+    },
+    {
+      name: 'Adultos Mayores',
+      slots: [
+        { days: 'Lunes y Viernes', time: '8hs' },
       ],
     },
     {
