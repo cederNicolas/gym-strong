@@ -69,13 +69,6 @@ const actStyles = {
 
 function MosaicIcon({ type }) {
   const s = { width: 28, height: 28, color: '#FFB800' };
-  if (type === 'fightdo') {
-    return (
-      <svg style={s} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
-      </svg>
-    );
-  }
   if (type === 'zumba') {
     return (
       <svg style={s} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -115,12 +108,11 @@ function Activities() {
     {
       type: 'mosaic',
       tag: 'Grupales',
-      title: 'Fight.Do · Zumba · Spinning · Telas',
+      title: 'Zumba · Spinning · Telas',
       desc: 'Clases grupales para todos los niveles. Mirá los días y horarios de cada una y reservá tu clase de prueba.',
       href: '#class-schedule',
       tiles: [
-        { icon: 'fightdo', label: 'Fight.Do', bg: '#151515' },
-        { icon: 'zumba', label: 'Zumba', bg: '#1f1f1f' },
+        { icon: 'zumba', label: 'Zumba', bg: '#151515' },
         { icon: 'spinning', label: 'Spinning', bg: '#1f1f1f' },
         { icon: 'telas', label: 'Telas', bg: '#151515' },
       ],
@@ -159,7 +151,11 @@ function Activities() {
                     <div style={actStyles.cardOverlay} />
                   </React.Fragment>
                 ) : (
-                  <div style={actStyles.mosaic}>
+                  <div style={{
+                    ...actStyles.mosaic,
+                    gridTemplateColumns: `repeat(${a.tiles.length}, 1fr)`,
+                    gridTemplateRows: '1fr',
+                  }}>
                     {a.tiles.map((t, ti) => (
                       <div key={ti} style={{...actStyles.mosaicTile, background: t.bg}}>
                         <MosaicIcon type={t.icon} />

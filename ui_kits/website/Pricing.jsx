@@ -117,8 +117,8 @@ function Pricing() {
       price: '$50.000',
       badge: 'Opción extra',
       accent: true,
-      features: ['Musculación ilimitada', 'Suma 1 clase de cardio a elección', 'Zumba, Fight.Do o Spinning'],
-      wa: 'Musculación + Cardio (Zumba/Fight.Do/Spinning)',
+      features: ['Musculación ilimitada', 'Suma 1 clase de cardio a elección', 'Zumba o Spinning'],
+      wa: 'Musculación + Cardio (Zumba/Spinning)',
     },
   ];
 

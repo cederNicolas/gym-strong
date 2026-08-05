@@ -63,22 +63,21 @@ const classSchedStyles = {
 function ClassSchedule() {
   const activities = [
     {
-      name: 'Fight.Do',
-      slots: [
-        { days: 'Lunes, Miércoles, Viernes y Sábados', time: '10:30 a 11:30hs' },
-        { days: 'Lunes, Miércoles y Viernes', time: '19 a 20hs' },
-      ],
-    },
-    {
-      name: 'Zumba Kids',
-      slots: [
-        { days: 'Lunes', time: '18 a 19hs' },
-      ],
-    },
-    {
-      name: 'Zumba Teens',
-      slots: [
-        { days: 'Lunes', time: '19:15 a 20:15hs' },
+      name: 'Zumba Kids/Teens',
+      waName: 'Zumba',
+      groups: [
+        {
+          label: 'Kids',
+          slots: [
+            { days: 'Lunes', time: '18 a 19hs' },
+          ],
+        },
+        {
+          label: 'Teens',
+          slots: [
+            { days: 'Lunes', time: '19:15 a 20:15hs' },
+          ],
+        },
       ],
     },
     {
@@ -159,7 +158,7 @@ function ClassSchedule() {
                   }}>
                     <p style={classSchedStyles.groupLabel}>{g.label}</p>
                     {g.slots.map((s, j) => (
-                      <a key={j} href={waLink(`${a.name} ${g.label}`, s)} target="_blank" rel="noopener"
+                      <a key={j} href={waLink(`${a.waName || a.name} ${g.label}`, s)} target="_blank" rel="noopener"
                          style={classSchedStyles.slot}
                          onMouseEnter={e => { e.currentTarget.style.borderColor = '#FFB800'; e.currentTarget.style.background = 'rgba(255,184,0,0.08)'; }}
                          onMouseLeave={e => { e.currentTarget.style.borderColor = '#2A2A2A'; e.currentTarget.style.background = '#0A0A0A'; }}>
