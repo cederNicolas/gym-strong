@@ -83,8 +83,8 @@ function ClassSchedule() {
     {
       name: 'Zumba',
       slots: [
-        { days: 'Lunes, Miércoles y Viernes', time: '18hs' },
         { days: 'Martes y Jueves', time: '20:30hs' },
+        { days: 'Miércoles y Viernes', time: '8:30hs' },
         { days: 'Sábados', time: '16hs' },
       ],
     },
@@ -92,9 +92,7 @@ function ClassSchedule() {
       name: 'Spinning',
       slots: [
         { days: 'Lunes, Miércoles y Viernes', time: '9hs' },
-        { days: 'Lunes', time: '20:15 a 21:15hs' },
-        { days: 'Martes y Jueves', time: '19hs' },
-        { days: 'Viernes', time: '20 a 21hs' },
+        { days: 'Martes, Jueves y Viernes', time: '19hs' },
         { days: 'Sábados', time: '13:30hs' },
       ],
     },
