@@ -92,6 +92,7 @@ function ClassSchedule() {
       name: 'Spinning',
       slots: [
         { days: 'Lunes, Miércoles y Viernes', time: '9hs' },
+        { days: 'Martes y Jueves', time: '18hs' },
         { days: 'Martes, Jueves y Viernes', time: '19hs' },
         { days: 'Sábados', time: '13:30hs' },
       ],
@@ -107,6 +108,12 @@ function ClassSchedule() {
       name: 'Adultos Mayores',
       slots: [
         { days: 'Lunes y Viernes', time: '8hs' },
+      ],
+    },
+    {
+      name: 'Pilates',
+      slots: [
+        { time: 'Consultar horarios', query: true },
       ],
     },
     {
@@ -129,7 +136,9 @@ function ClassSchedule() {
   ];
 
   const waLink = (activityName, slot) => {
-    const text = `Hola! Vi la web de Strong Gym y quiero reservar una clase de prueba de ${activityName} el ${slot.days} de ${slot.time} 💪`;
+    const text = slot.query
+      ? `Hola! Vi la web de Strong Gym y quiero consultar los horarios de ${activityName} 💪`
+      : `Hola! Vi la web de Strong Gym y quiero reservar una clase de prueba de ${activityName} el ${slot.days} de ${slot.time} 💪`;
     return `https://wa.me/5491149601563?text=${encodeURIComponent(text)}`;
   };
 
@@ -170,10 +179,10 @@ function ClassSchedule() {
                 <div style={classSchedStyles.slots}>
                   {a.slots.map((s, j) => (
                     <a key={j} href={waLink(a.name, s)} target="_blank" rel="noopener"
-                       style={classSchedStyles.slot}
+                       style={{ ...classSchedStyles.slot, ...(s.days ? {} : { justifyContent: 'center' }) }}
                        onMouseEnter={e => { e.currentTarget.style.borderColor = '#FFB800'; e.currentTarget.style.background = 'rgba(255,184,0,0.08)'; }}
                        onMouseLeave={e => { e.currentTarget.style.borderColor = '#2A2A2A'; e.currentTarget.style.background = '#0A0A0A'; }}>
-                      <span style={classSchedStyles.slotDays}>{s.days}</span>
+                      {s.days && <span style={classSchedStyles.slotDays}>{s.days}</span>}
                       <span style={classSchedStyles.slotTime}>{s.time}</span>
                     </a>
                   ))}
