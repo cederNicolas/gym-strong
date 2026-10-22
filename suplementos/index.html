@@ -23,7 +23,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .wrap{max-width:720px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 header{padding-block:28px 18px;border-bottom:1px solid var(--line)}
 .eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--amber)}
-h1{margin:6px 0 0;font-size:clamp(30px,8vw,46px);font-weight:900;text-transform:uppercase;line-height:.95;letter-spacing:-.01em;text-wrap:balance}
+h1{margin:0;font-size:clamp(30px,8vw,46px);font-weight:900;text-transform:uppercase;line-height:.95;letter-spacing:-.01em;text-wrap:balance}
 h1 span{color:var(--amber)}
 .sub{margin:10px 0 0;color:var(--muted);font-size:13px;font-weight:500}
 .bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
@@ -83,7 +83,6 @@ label.lbl{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:upp
 
 
 <header><div class="wrap">
-  <div class="eyebrow">Recepción · Pres. Arturo Illia 3042</div>
   <h1>Gym <span>Strong</span><br>Suplementos</h1>
   <p class="sub" id="meta"></p>
 </div></header>
@@ -133,7 +132,7 @@ try { const s = JSON.parse(localStorage.getItem("strong-cart")||"{}"); for (cons
 try { $("nombre").value = localStorage.getItem("strong-nombre")||""; } catch(e){}
 function save(){ try{ const o={}; for(const id in cart){ const d=DATA[id]; o[d.m+"|"+d.n]=cart[id]; } localStorage.setItem("strong-cart",JSON.stringify(o)); }catch(e){} }
 
-$("meta").textContent = DATA.length + " productos disponibles · armá tu pedido y mandalo por WhatsApp";
+$("meta").textContent = "Armá tu pedido, recibilo en recepción.";
 ["Destacados",...ORDER].forEach(c=>{
   const b=document.createElement("button"); b.className="chip"; b.textContent=c; b.type="button";
   b.setAttribute("aria-pressed", c===cat);
