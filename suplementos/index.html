@@ -49,6 +49,7 @@ li{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;
 .price.ask{color:var(--amber);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
 .add{width:38px;height:38px;border-radius:10px;border:1px solid var(--amber);background:transparent;color:var(--amber);font:800 20px/1 var(--display);cursor:pointer;display:grid;place-items:center}
 .add.in{background:var(--amber);color:var(--amber-ink);font-size:14px}
+.tag{display:inline-block;margin-top:5px;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--amber-ink);background:var(--amber);padding:3px 7px;border-radius:4px}
 .empty{padding:40px 0;color:var(--muted);text-align:center;font-weight:600}
 footer{border-top:1px solid var(--line);color:var(--muted);font-size:12px;font-weight:500}
 footer .wrap{padding-block:18px 28px}
@@ -126,29 +127,32 @@ const fmt = n => n==null ? "Consultar" : "$" + n.toLocaleString("es-AR");
 const money = n => "$" + n.toLocaleString("es-AR");
 const norm = s => s.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
 const $ = id => document.getElementById(id);
-let cat = "Todo", cart = {};
+let cat = "Destacados", cart = {};
+const FEAT = [["ENA|True Made 2lb","Proteína más vendida"],["Star Nutrition|Whey Protein 2lb","Proteína más vendida"],["Star Nutrition|Creatina Doypack 300g","Creatina más vendida"],["ENA|Creatina 300g Neutra","Creatina más vendida"],["Star Nutrition|Pump V8","Pre entreno recomendado"]];
 try { const s = JSON.parse(localStorage.getItem("strong-cart")||"{}"); for (const k in s){ const d=DATA.find(x=>x.m+"|"+x.n===k); if(d) cart[d.id]=s[k]; } } catch(e){}
 try { $("nombre").value = localStorage.getItem("strong-nombre")||""; } catch(e){}
 function save(){ try{ const o={}; for(const id in cart){ const d=DATA[id]; o[d.m+"|"+d.n]=cart[id]; } localStorage.setItem("strong-cart",JSON.stringify(o)); }catch(e){} }
 
 $("meta").textContent = DATA.length + " productos disponibles · armá tu pedido y mandalo por WhatsApp";
-["Todo",...ORDER].forEach(c=>{
+["Destacados",...ORDER].forEach(c=>{
   const b=document.createElement("button"); b.className="chip"; b.textContent=c; b.type="button";
   b.setAttribute("aria-pressed", c===cat);
   b.onclick=()=>{cat=c; $("chips").querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed",x===b)); render();};
   $("chips").appendChild(b);
 });
+const row = (d,tag) => {const q=cart[d.id]||0; return `<li><span class="name">${brandTag(d.m)}<span class="prod">${d.n}</span>${tag?`<span class="tag">${tag}</span>`:""}</span><span class="price${d.p==null?" ask":""}">${fmt(d.p)}</span><button type="button" class="add${q?" in":""}" data-id="${d.id}" aria-label="Agregar ${d.m} ${d.n}">${q?"×"+q:"+"}</button></li>`};
 function render(){
   const t = norm($("q").value.trim());
   let html="";
-  ORDER.forEach(c=>{
-    if(cat!=="Todo" && cat!==c) return;
+  if(cat==="Destacados" && !t){
+    const items = FEAT.map(([k,tag])=>[DATA.find(d=>d.m+"|"+d.n===k),tag]).filter(x=>x[0]);
+    html = `<section><h2>Destacados<small>${items.length}</small></h2><ul>` + items.map(([d,tag])=>row(d,tag)).join("") + `</ul></section>`;
+  } else ORDER.forEach(c=>{
+    if(cat!=="Destacados" && cat!==c) return;
     const items = DATA.filter(d=>d.c===c && (!t || norm(d.m+" "+d.n).includes(t)))
       .sort((a,b)=>a.m.localeCompare(b.m)||(a.p??1e9)-(b.p??1e9));
     if(!items.length) return;
-    html += `<section><h2>${c}<small>${items.length}</small></h2><ul>` +
-      items.map(d=>{const q=cart[d.id]||0; return `<li><span class="name">${brandTag(d.m)}<span class="prod">${d.n}</span></span><span class="price${d.p==null?" ask":""}">${fmt(d.p)}</span><button type="button" class="add${q?" in":""}" data-id="${d.id}" aria-label="Agregar ${d.m} ${d.n}">${q?"×"+q:"+"}</button></li>`}).join("") +
-      `</ul></section>`;
+    html += `<section><h2>${c}<small>${items.length}</small></h2><ul>` + items.map(d=>row(d)).join("") + `</ul></section>`;
   });
   $("list").innerHTML = html || `<p class="empty">No encontramos ese producto. Preguntá en recepción.</p>`;
 }
