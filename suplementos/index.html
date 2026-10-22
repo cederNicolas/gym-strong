@@ -34,6 +34,8 @@ h1 span{color:var(--amber)}
 #q::placeholder,#nombre::placeholder{color:var(--muted);font-weight:500}
 .chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0 -2px;padding:0 2px}
 .chips::-webkit-scrollbar{display:none}
+@media (min-width:700px){.chips{flex-wrap:wrap;overflow:visible}}
+
 .chip{flex:none;background:transparent;border:1px solid var(--line);color:var(--fg);font:700 11px var(--display);letter-spacing:.08em;text-transform:uppercase;padding:8px 12px;border-radius:999px;cursor:pointer}
 .chip[aria-pressed="true"]{background:var(--amber);border-color:var(--amber);color:var(--amber-ink)}
 button:focus-visible,#q:focus-visible,#nombre:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
@@ -142,6 +144,8 @@ $("meta").textContent = "Armá tu pedido, recibilo en recepción.";
   $("chips").appendChild(b);
 });
 const row = (d,tag) => {const q=cart[d.id]||0; return `<li><span class="name">${brandTag(d.m)}<span class="prod">${d.n}</span>${tag?`<span class="tag">${tag}</span>`:""}</span><span class="price${d.p==null?" ask":""}">${fmt(d.p)}</span><button type="button" class="add${q?" in":""}" data-id="${d.id}" aria-label="Agregar ${d.m} ${d.n}">${q?"×"+q:"+"}</button></li>`};
+
+$("chips").addEventListener("wheel",e=>{const c=$("chips"); if(c.scrollWidth<=c.clientWidth||Math.abs(e.deltaX)>Math.abs(e.deltaY)) return; e.preventDefault(); c.scrollLeft+=e.deltaY;},{passive:false});
 function render(){
   const t = norm($("q").value.trim());
   let html="";
