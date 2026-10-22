@@ -136,7 +136,7 @@ try { const s = JSON.parse(localStorage.getItem("strong-cart")||"{}"); for (cons
 try { $("nombre").value = localStorage.getItem("strong-nombre")||""; } catch(e){}
 function save(){ try{ const o={}; for(const id in cart){ const d=DATA[id]; o[d.m+"|"+d.n]=cart[id]; } localStorage.setItem("strong-cart",JSON.stringify(o)); }catch(e){} }
 
-$("meta").textContent = "Armá tu pedido, recibilo en recepción.";
+$("meta").innerHTML = "Armá tu pedido, recibilo en recepción.<br>Aboná en efectivo o transferencia vía WhatsApp.";
 ["Destacados",...ORDER].forEach(c=>{
   const b=document.createElement("button"); b.className="chip"; b.textContent=c; b.type="button";
   b.setAttribute("aria-pressed", c===cat);
