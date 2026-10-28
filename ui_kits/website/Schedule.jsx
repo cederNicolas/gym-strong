@@ -63,7 +63,7 @@ function Schedule() {
           </div>
           <div style={schedStyles.row}>
             <span style={schedStyles.day}>Sábados</span>
-            <span style={schedStyles.time}>09:00 — 13:30hs</span>
+            <span style={schedStyles.time}>09:00 — 14:00hs</span>
           </div>
           <div style={schedStyles.rowLast}>
             <span style={schedStyles.day}>Domingos</span>

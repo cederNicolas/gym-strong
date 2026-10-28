@@ -92,14 +92,14 @@ function Pricing() {
       name: 'Musculación 2x',
       desc: 'Entrenamiento con pesas libres y máquinas, 2 días por semana.',
       price: '$40.000',
-      features: ['Acceso 2 días por semana', 'Seguimiento de profes', 'Lun a Vie 07:30–22:00', 'Sáb 09:00–13:30'],
+      features: ['Acceso 2 días por semana', 'Seguimiento de profes', 'Lun a Vie 07:30–22:00', 'Sáb 09:00–14:00'],
       wa: 'Musculación 2x por semana',
     },
     {
       name: 'Musculación 3x',
       desc: 'Entrenamiento con pesas libres y máquinas, 3 días por semana.',
       price: '$43.000',
-      features: ['Acceso 3 días por semana', 'Seguimiento de profes', 'Lun a Vie 07:30–22:00', 'Sáb 09:00–13:30'],
+      features: ['Acceso 3 días por semana', 'Seguimiento de profes', 'Lun a Vie 07:30–22:00', 'Sáb 09:00–14:00'],
       wa: 'Musculación 3x por semana',
     },
     {
@@ -108,7 +108,7 @@ function Pricing() {
       price: '$45.000',
       badge: 'Más elegido',
       featured: true,
-      features: ['Musculación ilimitada', 'Seguimiento de profes', 'Lun a Vie 07:30–22:00', 'Sáb 09:00–13:30'],
+      features: ['Musculación ilimitada', 'Seguimiento de profes', 'Lun a Vie 07:30–22:00', 'Sáb 09:00–14:00'],
       wa: 'Musculación Libre',
     },
     {
