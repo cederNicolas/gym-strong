@@ -83,6 +83,7 @@ function ClassSchedule() {
     {
       name: 'Zumba',
       slots: [
+        { days: 'Lunes, Miércoles y Viernes', time: '20hs' },
         { days: 'Martes y Jueves', time: '20:30hs' },
         { days: 'Sábados', time: '16hs' },
       ],
