@@ -84,24 +84,15 @@ function ClassSchedule() {
       name: 'Zumba',
       slots: [
         { days: 'Martes y Jueves', time: '20:30hs' },
-        { days: 'Miércoles y Viernes', time: '8:30hs' },
         { days: 'Sábados', time: '16hs' },
       ],
     },
     {
       name: 'Spinning',
       slots: [
-        { days: 'Lunes, Miércoles y Viernes', time: '9hs' },
         { days: 'Martes y Jueves', time: '18hs' },
         { days: 'Martes, Jueves y Viernes', time: '19hs' },
         { days: 'Sábados', time: '13:30hs' },
-      ],
-    },
-    {
-      name: 'GAP',
-      slots: [
-        { days: 'Lunes, Miércoles y Viernes', time: '10hs' },
-        { days: 'Lunes, Miércoles y Viernes', time: '14hs' },
       ],
     },
     {
@@ -117,20 +108,9 @@ function ClassSchedule() {
       ],
     },
     {
-      name: 'Telas',
-      groups: [
-        {
-          label: 'Adultos',
-          slots: [
-            { days: 'Martes y Jueves', time: '10 a 12hs' },
-          ],
-        },
-        {
-          label: 'Teens',
-          slots: [
-            { days: 'Miércoles y Viernes', time: '17:30 a 19hs' },
-          ],
-        },
+      name: 'Strong Kids',
+      slots: [
+        { time: 'Consultar horarios', query: true },
       ],
     },
   ];
