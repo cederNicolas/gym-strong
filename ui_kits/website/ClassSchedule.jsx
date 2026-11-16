@@ -96,6 +96,12 @@ function ClassSchedule() {
       ],
     },
     {
+      name: 'Boxeo',
+      slots: [
+        { days: 'Martes y Jueves', time: '20hs' },
+      ],
+    },
+    {
       name: 'Adultos Mayores',
       slots: [
         { days: 'Lunes y Viernes', time: '8hs' },

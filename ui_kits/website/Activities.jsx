@@ -88,9 +88,13 @@ function MosaicIcon({ type }) {
       </svg>
     );
   }
+  // boxeo: guante
   return (
     <svg style={s} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2" />
+      <path d="M7 21h9v-4l2.2-3.3A3 3 0 0 0 19 12V7a4 4 0 0 0-4-4h-4a4 4 0 0 0-4 4v1" />
+      <path d="M7 8a2.5 2.5 0 0 0-2.5 2.5V12A4 4 0 0 0 7 15.7V21" />
+      <path d="M4.5 11H9a2 2 0 0 0 0-4" />
+      <path d="M7 17.5h9" />
     </svg>
   );
 }
@@ -108,13 +112,13 @@ function Activities() {
     {
       type: 'mosaic',
       tag: 'Grupales',
-      title: 'Zumba · Spinning · Telas',
+      title: 'Zumba · Spinning · Boxeo',
       desc: 'Clases grupales para todos los niveles. Mirá los días y horarios de cada una y reservá tu clase de prueba.',
       href: '#class-schedule',
       tiles: [
         { icon: 'zumba', label: 'Zumba', bg: '#151515' },
         { icon: 'spinning', label: 'Spinning', bg: '#1f1f1f' },
-        { icon: 'telas', label: 'Telas', bg: '#151515' },
+        { icon: 'boxeo', label: 'Boxeo', bg: '#151515' },
       ],
     },
   ];
